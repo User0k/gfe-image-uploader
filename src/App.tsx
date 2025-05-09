@@ -1,19 +1,10 @@
-import { twMerge } from "tailwind-merge";
-import CloseIcon from "./icons/close.svg?react";
-
-const styles = {
-  shape:
-    "flex gap-1 justify-between items-center cursor-pointer rounded-md p-2",
-  btnColors: "bg-indigo-600 text-white",
-  icon: "",
-};
+import Card from "./components/Card";
 
 function App() {
   return (
-    <button className={twMerge(styles.shape, styles.btnColors)}>
-      <CloseIcon className="w-4 h-4 fill-white" />
-      Button
-    </button>
+    <div className="h-full min-h-screen flex items-center text-gray-900 p-6 bg-gradient-to-br from-gray-100 to-gray-300">
+      <Card />
+    </div>
   );
 }
 
