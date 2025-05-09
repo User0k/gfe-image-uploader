@@ -1,4 +1,8 @@
+import { getFlagEmoji } from "../utils/getFlagEmoji";
+
 function Card() {
+  const flagEmoji = getFlagEmoji("Canada");
+
   return (
     <article className="card max-w-180 w-full mx-auto bg-white rounded-lg shadow-lg">
       <header className="relative h-42 bg-cover bg-center bg-[url(/cover.jpg)] rounded-tl-lg rounded-tr-lg">
@@ -32,7 +36,10 @@ function Card() {
           </li>
         </ul>
         <footer className="flex items-center text-gray-500 pb-8">
-          <span className="text-lg">Vancouver, Canada</span>
+          <span aria-label="Canadian flag" role="img" className="text-xl">
+            {flagEmoji}
+          </span>
+          <span className="text-lg pl-4">Vancouver, Canada</span>
         </footer>
       </section>
     </article>
