@@ -6,7 +6,15 @@ function Card() {
   return (
     <article className="card max-w-180 w-full mx-auto bg-white rounded-lg shadow-lg">
       <header className="relative h-42 bg-cover bg-center bg-[url(/cover.jpg)] rounded-tl-lg rounded-tr-lg">
-        <div className="avatar"></div>
+        <div className="absolute top-16 left-8 max-sm:top-18 max-sm:left-4">
+          <div className="relative w-40 h-40 overflow-hidden rounded-full border-6 border-white max-sm:w-24 max-sm:h-24 max-sm:border-3">
+            <img
+              className="absolute top-[-20px] h-50 w-auto object-cover max-sm:top-[-12px] max-sm:h-30"
+              src={"/image.jpg"}
+              alt="avatar"
+            />
+          </div>
+        </div>
       </header>
       <section className="sm:px-6 px-4">
         <div className="flex justify-end sm:mt-4 mt-2 sm:mb-6 mb-2">
