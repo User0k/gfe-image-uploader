@@ -18,7 +18,13 @@ function Card() {
       </header>
       <section className="sm:px-6 px-4">
         <div className="flex justify-end sm:mt-4 mt-2 sm:mb-6 mb-2">
-          <button className="shadow">Update picture</button>
+          <button
+            className="cursor-pointer 
+            rounded-md font-semibold py-2 sm:px-4 px-2 sm:text-base text-sm
+            border-1 border-gray-200 text-gray-800 hover:bg-gray-100"
+          >
+            Update picture
+          </button>
         </div>
         <h1 className="font-semibold sm:text-3xl text-2xl text-gray-800 mb-6">
           Jack Smith
