@@ -16,3 +16,22 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const Error: Story = {
+  args: {
+    color: "error",
+  },
+};
+
+export const DefaultContained: Story = {
+  args: {
+    variant: "contained",
+  },
+};
+
+export const ConfirmContained: Story = {
+  args: {
+    color: "confirm",
+    variant: "contained",
+  },
+};
