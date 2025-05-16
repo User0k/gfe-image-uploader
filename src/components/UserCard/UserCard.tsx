@@ -1,4 +1,5 @@
 import { Button } from "../Button/Button";
+import { UploadModal } from "../UploadModal/UploadModal";
 import { Avatar } from "./Avatar";
 import { UserDetails } from "./UserDetails";
 import { UserLocation } from "./UserLocation";
@@ -32,6 +33,7 @@ export function UserCard({ userName, details, location, imageSrc }: CardProps) {
         <UserDetails {...details} />
         <UserLocation {...location} />
       </section>
+      <UploadModal />
     </article>
   );
 }
