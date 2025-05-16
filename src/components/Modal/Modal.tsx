@@ -14,7 +14,6 @@ export function Modal({
 }: DialogHTMLAttributes<HTMLDialogElement> & ModalProps) {
   return (
     <dialog
-      open
       ref={ref}
       className="z-1 m-auto max-h-[90%] overflow-auto rounded-lg px-5 py-6 backdrop:bg-neutral-950 backdrop:opacity-70"
     >

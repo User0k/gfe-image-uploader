@@ -18,7 +18,7 @@ interface CardProps {
   imageSrc: string;
 }
 
-export function Card({ userName, details, location, imageSrc }: CardProps) {
+export function UserCard({ userName, details, location, imageSrc }: CardProps) {
   const uploadModalRef = useRef<HTMLDialogElement>(null);
 
   return (
@@ -28,7 +28,12 @@ export function Card({ userName, details, location, imageSrc }: CardProps) {
       </header>
       <section className="sm:px-6 px-4">
         <div className="flex justify-end sm:mt-4 mt-2 sm:mb-6 mb-2">
-          <Button className="shadow">Update picture</Button>
+          <Button
+            onClick={() => uploadModalRef.current?.showModal()}
+            className="shadow"
+          >
+            Update picture
+          </Button>
         </div>
         <h1 className="font-semibold sm:text-3xl text-2xl text-gray-800 mb-6">
           {userName}
