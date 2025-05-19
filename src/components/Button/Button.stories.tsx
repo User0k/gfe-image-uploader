@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import { Button } from "./Button";
 
 const meta = {
@@ -8,7 +9,7 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  args: { children: "Button" },
+  args: { onClick: fn(), children: "Button" },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -23,15 +24,33 @@ export const Error: Story = {
   },
 };
 
-export const DefaultContained: Story = {
-  args: {
-    variant: "contained",
-  },
-};
-
 export const ConfirmContained: Story = {
   args: {
     color: "confirm",
     variant: "contained",
   },
+};
+
+export const FullWidth: Story = {
+  args: {
+    color: "confirm",
+    variant: "contained",
+    fullWidth: true,
+  },
+};
+
+export const SmallContainedError: Story = {
+  args: {
+    size: "small",
+    color: "error",
+    variant: "contained",
+  },
+};
+
+export const SmallText: Story = {
+  args: {
+    size: "small",
+    variant: "text",
+  },
+  render: (args) => <Button {...args}>Clickable text</Button>,
 };

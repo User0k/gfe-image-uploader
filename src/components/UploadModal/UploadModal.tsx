@@ -22,10 +22,13 @@ export function UploadModal({ ref }: UploadModalProps) {
         <DropZone />
       </form>
       <div className="flex justify-between align-center mt-6">
-        <Button onClick={handleClose}>Cancel</Button>
+        <Button fullWidth onClick={handleClose}>
+          Cancel
+        </Button>
         <Button
           variant="contained"
           color="confirm"
+          fullWidth
           onClick={handleSubmit}
           className="ml-4"
         >

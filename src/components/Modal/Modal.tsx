@@ -21,10 +21,10 @@ export function Modal({
         <h2 className="flex items-center justify-between pb-2 font-medium text-xl text-gray-900">
           {title}
           <button
-            className="cursor-pointer"
+            className="cursor-pointer hover:bg-gray-100"
             onClick={() => ref.current?.close()}
           >
-            <CloseIcon className="w-4 h-4 fill-gray-500 hover:fill-red-600" />
+            <CloseIcon className="w-4 h-4 fill-gray-500" />
           </button>
         </h2>
         {children}
