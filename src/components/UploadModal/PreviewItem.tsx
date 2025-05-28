@@ -20,7 +20,10 @@ export function PreviewItem({
   fileSize,
   status,
   checked,
-}: ThumbPreview) {
+  onSelectChange,
+}: ThumbPreview & {
+  onSelectChange: () => void;
+}) {
   const size = convertFromBytes(fileSize);
 
   return (
@@ -74,7 +77,7 @@ export function PreviewItem({
           type="radio"
           name="thumb-radio"
           checked={checked}
-          onChange={() => {}}
+          onChange={onSelectChange}
         />
       )}
       {status === "uploaded" && (

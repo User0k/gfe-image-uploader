@@ -1,7 +1,7 @@
 import { Button } from "../Button/Button";
 import { DropZone } from "./DropZone";
 import { Modal } from "../Modal/Modal";
-import { type RefObject } from "react";
+import { useState, type RefObject } from "react";
 import { PreviewItem, ThumbPreview } from "./PreviewItem";
 
 export type UploadModalProps = {
@@ -44,6 +44,8 @@ const mockedImages: (ThumbPreview & { id: string })[] = [
 ];
 
 export function UploadModal({ ref }: UploadModalProps) {
+  const selectedId = mockedImages.find((image) => image.checked)?.id;
+  const [checkedId, setCheckedId] = useState(selectedId);
   const handleClose = () => ref.current?.close();
 
   const handleSubmit = () => {
@@ -59,7 +61,12 @@ export function UploadModal({ ref }: UploadModalProps) {
       </form>
       <div className="mt-6">
         {mockedImages.map((image) => (
-          <PreviewItem {...image} key={image.id} />
+          <PreviewItem
+            {...image}
+            checked={checkedId === selectedId}
+            onSelectChange={() => setCheckedId(image.id)}
+            key={image.id}
+          />
         ))}
       </div>
       <div className="flex justify-between align-center mt-6">
