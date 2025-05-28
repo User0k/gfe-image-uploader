@@ -4,6 +4,7 @@ import { UploadModal } from "../UploadModal/UploadModal";
 import { Avatar } from "./Avatar";
 import { UserDetails } from "./UserDetails";
 import { UserLocation } from "./UserLocation";
+import { CropModal } from "../CropModal/CropModal";
 
 interface CardProps {
   userName: string;
@@ -20,6 +21,7 @@ interface CardProps {
 
 export function UserCard({ userName, details, location, imageSrc }: CardProps) {
   const uploadModalRef = useRef<HTMLDialogElement>(null);
+  const cropModalRef = useRef<HTMLDialogElement>(null);
 
   return (
     <article className="md:max-w-180 max-w-106 w-full mx-auto bg-white rounded-lg shadow-lg">
@@ -29,7 +31,7 @@ export function UserCard({ userName, details, location, imageSrc }: CardProps) {
       <section className="sm:px-6 px-4">
         <div className="flex justify-end sm:mt-4 mt-2 sm:mb-6 mb-2">
           <Button
-            onClick={() => uploadModalRef.current?.showModal()}
+            onClick={() => cropModalRef.current?.showModal()}
             className="shadow"
           >
             Update picture
@@ -41,6 +43,7 @@ export function UserCard({ userName, details, location, imageSrc }: CardProps) {
         <UserDetails {...details} />
         <UserLocation {...location} />
         <UploadModal ref={uploadModalRef} />
+        <CropModal ref={cropModalRef} />
       </section>
     </article>
   );
