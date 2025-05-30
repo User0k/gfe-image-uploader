@@ -14,7 +14,7 @@ const twStyles = {
   },
 };
 
-export function Avatar({ imageSrc }: { imageSrc: string }) {
+export function Avatar({ imageSrc = "" }: { imageSrc?: string }) {
   return (
     <div className={twMerge(twStyles.default.avatar, twStyles.small.avatar)}>
       <div className={twMerge(twStyles.default.circle, twStyles.small.circle)}>

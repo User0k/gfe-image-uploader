@@ -5,28 +5,24 @@ import { Avatar } from "./Avatar";
 import { UserDetails } from "./UserDetails";
 import { UserLocation } from "./UserLocation";
 import { CropModal } from "../CropModal/CropModal";
+import { ProfileDetails, ProfileLocation, Image } from "../../types";
 
-interface CardProps {
+type CardProps = {
   userName: string;
-  details: {
-    companyName: string;
-    jobTitle: string;
-    companyIconUrl?: string;
-    nickName?: string;
-    pronouns?: string;
-  };
-  location: { country: string; city: string };
-  imageSrc: string;
-}
+  details: ProfileDetails;
+  location: ProfileLocation;
+  images: Image[];
+};
 
-export function UserCard({ userName, details, location, imageSrc }: CardProps) {
+export function UserCard({ userName, details, location, images }: CardProps) {
   const uploadModalRef = useRef<HTMLDialogElement>(null);
   const cropModalRef = useRef<HTMLDialogElement>(null);
+  const avatarUrl = images.find((image) => image.selected)?.fullImage;
 
   return (
     <article className="md:max-w-180 max-w-106 w-full mx-auto bg-white rounded-lg shadow-lg">
       <header className="relative sm:h-42 h-32 bg-cover bg-center bg-[url(/cover.jpg)] rounded-tl-lg rounded-tr-lg">
-        <Avatar imageSrc={imageSrc} />
+        <Avatar imageSrc={avatarUrl} />
       </header>
       <section className="sm:px-6 px-4">
         <div className="flex justify-end sm:mt-4 mt-2 sm:mb-6 mb-2">

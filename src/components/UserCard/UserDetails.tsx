@@ -1,12 +1,5 @@
 import { twMerge } from "tailwind-merge";
-
-interface DetailsProps {
-  companyName: string;
-  jobTitle: string;
-  companyIconUrl?: string;
-  nickName?: string;
-  pronouns?: string;
-}
+import { ProfileDetails } from "../../types";
 
 const twStyles = {
   gray: "text-gray-500",
@@ -21,7 +14,7 @@ const twStyles = {
   },
 };
 
-export function UserDetails(props: DetailsProps) {
+export function UserDetails(props: ProfileDetails) {
   const { companyName, companyIconUrl, jobTitle, pronouns, nickName } = props;
 
   return (

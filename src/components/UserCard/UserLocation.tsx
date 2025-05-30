@@ -1,9 +1,5 @@
 import { getFlagEmoji } from "../../utils/getFlagEmoji";
-
-type ProfileLocation = {
-  country: string;
-  city: string;
-};
+import { ProfileLocation } from "../../types";
 
 export function UserLocation({ city, country }: ProfileLocation) {
   const flagEmoji = getFlagEmoji(country);
